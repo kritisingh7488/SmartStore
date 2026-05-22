@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-light: #6FCF97;
+  --color-brand: #2FA084;
+  --color-brand-dark: #1F6F5F;
+  --color-bg-light: #EEEEEE;
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+html, body {
+  @apply bg-slate-50 text-slate-800 font-sans antialiased m-0 p-0 transition-colors duration-300;
+  height: 100%;
+}
+
+html.dark body {
+  @apply bg-slate-900 text-slate-100;
+}
+
+#root {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Custom micro-animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+/* Glass Panels for Light/Dark */
+.glass-panel {
+  @apply bg-white/80 border border-slate-200/50 shadow-lg rounded-xl backdrop-blur-md transition-colors duration-300;
+}
+
+.dark .glass-panel {
+  @apply bg-slate-800/80 border-slate-700/50 shadow-slate-900/50;
+}
+
+/* Inputs */
+.input-field {
+  @apply w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-2 text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#2FA084] focus:border-transparent transition-all;
+}
+
+.dark .input-field {
+  @apply bg-slate-700/50 border-slate-600 text-white;
+}
+
+/* Buttons */
+.btn-primary {
+  @apply bg-[#2FA084] hover:bg-[#1F6F5F] text-white font-semibold py-2 px-6 rounded-lg shadow-md hover:shadow-lg hover:scale-[1.02] transition-all duration-300 flex items-center justify-center;
+}
+
+.btn-secondary {
+  @apply bg-slate-200 hover:bg-slate-300 text-slate-800 font-semibold py-2 px-6 rounded-lg transition-all duration-300;
+}
+
+.dark .btn-secondary {
+  @apply bg-slate-700 hover:bg-slate-600 text-slate-200;
+}
+
+/* Chart.js tooltip customization via CSS (optional fallback) */
+.chartjs-tooltip {
+  @apply bg-white text-slate-800 border border-slate-200 rounded-lg shadow-lg text-sm px-3 py-2;
+}
+
+.dark .chartjs-tooltip {
+  @apply bg-slate-800 text-white border-slate-700;
+}
