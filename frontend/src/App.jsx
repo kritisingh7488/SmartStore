@@ -18,6 +18,7 @@ import Reports from './pages/Reports';
 import NotFound from './pages/NotFound';
 import Sidebar from './components/Sidebar';
 import Navbar from './components/Navbar';
+import ScrollToTop from './components/ScrollToTop';
 
 const AdminRoute = ({ children }) => {
   const { user, loading } = useContext(AuthContext);
@@ -68,6 +69,7 @@ function App() {
       <AuthProvider>
         <CartProvider>
           <Router>
+            <ScrollToTop />
             <Routes>
               {/* Public */}
               <Route path="/login" element={<Login />} />
