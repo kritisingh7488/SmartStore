@@ -1,0 +1,18 @@
+const express = require('express');
+const router = express.Router();
+const { registerUser, loginUser, getProfile, updateProfile, getAllUsers, deleteUser } = require('../controllers/authController');
+const { protect, adminOnly } = require('../middleware/authMiddleware');
+
+router.post('/register', registerUser);
+router.post('/login', loginUser);
+
+// Profile
+router.route('/profile')
+  .get(protect, getProfile)
+  .put(protect, updateProfile);
+
+// Admin user management
+router.get('/users', protect, adminOnly, getAllUsers);
+router.delete('/users/:id', protect, adminOnly, deleteUser);
+
+module.exports = router;
