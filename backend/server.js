@@ -20,6 +20,11 @@ if (!fs.existsSync(uploadsDir)) {
 app.use(cors());
 app.use(express.json());
 
+// Health check endpoint
+app.get('/api/health', (req, res) => {
+  res.status(200).json({ status: 'ok', message: 'SmartStore API is running' });
+});
+
 // Serve static uploads
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
