@@ -1,75 +1,53 @@
-@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@theme {
-  --color-brand-light: #6FCF97;
-  --color-brand: #2FA084;
-  --color-brand-dark: #1F6F5F;
-  --color-bg-light: #EEEEEE;
+:root {
+  color-scheme: light;
 }
 
-@custom-variant dark (&:where(.dark, .dark *));
-
-html, body {
-  @apply bg-slate-50 text-slate-800 font-sans antialiased m-0 p-0 transition-colors duration-300;
-  height: 100%;
+html {
+  scroll-behavior: smooth;
 }
 
-html.dark body {
-  @apply bg-slate-900 text-slate-100;
+body {
+  margin: 0;
+  font-family: 'Manrope', sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(248, 234, 209, 0.96), transparent 34%),
+    radial-gradient(circle at 80% 20%, rgba(233, 195, 142, 0.36), transparent 24%),
+    linear-gradient(180deg, #fffdf8 0%, #fbf2e4 45%, #f6ead9 100%);
+  color: #3c281b;
+  min-height: 100vh;
 }
 
-#root {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
+* {
+  box-sizing: border-box;
 }
 
-/* Custom micro-animations */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.animate-fade-in {
-  animation: fadeIn 0.4s ease-out forwards;
-}
-
-/* Glass Panels for Light/Dark */
 .glass-panel {
-  @apply bg-white/80 border border-slate-200/50 shadow-lg rounded-xl backdrop-blur-md transition-colors duration-300;
+  background: rgba(255, 253, 248, 0.72);
+  backdrop-filter: blur(22px);
+  border: 1px solid rgba(140, 99, 61, 0.12);
 }
 
-.dark .glass-panel {
-  @apply bg-slate-800/80 border-slate-700/50 shadow-slate-900/50;
+.grid-mesh {
+  background-image: linear-gradient(rgba(140, 99, 61, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(140, 99, 61, 0.05) 1px, transparent 1px);
+  background-size: 28px 28px;
 }
 
-/* Inputs */
-.input-field {
-  @apply w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-2 text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#2FA084] focus:border-transparent transition-all;
+/* Custom premium scrollbar for product list */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
 }
-
-.dark .input-field {
-  @apply bg-slate-700/50 border-slate-600 text-white;
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
 }
-
-/* Buttons */
-.btn-primary {
-  @apply bg-[#2FA084] hover:bg-[#1F6F5F] text-white font-semibold py-2 px-6 rounded-lg shadow-md hover:shadow-lg hover:scale-[1.02] transition-all duration-300 flex items-center justify-center;
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(141, 89, 45, 0.2);
+  border-radius: 20px;
 }
-
-.btn-secondary {
-  @apply bg-slate-200 hover:bg-slate-300 text-slate-800 font-semibold py-2 px-6 rounded-lg transition-all duration-300;
-}
-
-.dark .btn-secondary {
-  @apply bg-slate-700 hover:bg-slate-600 text-slate-200;
-}
-
-/* Chart.js tooltip customization via CSS (optional fallback) */
-.chartjs-tooltip {
-  @apply bg-white text-slate-800 border border-slate-200 rounded-lg shadow-lg text-sm px-3 py-2;
-}
-
-.dark .chartjs-tooltip {
-  @apply bg-slate-800 text-white border-slate-700;
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(141, 89, 45, 0.4);
 }
