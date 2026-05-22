@@ -15,6 +15,7 @@ import Orders from './pages/Orders';
 import Analytics from './pages/Analytics';
 import Inventory from './pages/Inventory';
 import Reports from './pages/Reports';
+import NotFound from './pages/NotFound';
 import Sidebar from './components/Sidebar';
 import Navbar from './components/Navbar';
 
@@ -86,6 +87,7 @@ function App() {
               <Route path="/admin/orders" element={<AdminRoute><AdminLayout><Orders /></AdminLayout></AdminRoute>} />
               <Route path="/admin/users" element={<AdminRoute><AdminLayout><UsersPage /></AdminLayout></AdminRoute>} />
               <Route path="/admin/profile" element={<AdminRoute><AdminLayout><UserProfile /></AdminLayout></AdminRoute>} />
+              <Route path="*" element={<NotFound />} />
             </Routes>
           </Router>
         </CartProvider>
