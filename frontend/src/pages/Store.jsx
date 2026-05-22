@@ -336,9 +336,9 @@ const Store = () => {
             </div>
             <div className="flex gap-4">
                {/* Social placeholders */}
-               <div className="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-400 hover:text-[#2FA084] hover:bg-[#2FA084]/10 transition-colors cursor-pointer">IN</div>
-               <div className="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-400 hover:text-[#2FA084] hover:bg-[#2FA084]/10 transition-colors cursor-pointer">TW</div>
-               <div className="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-400 hover:text-[#2FA084] hover:bg-[#2FA084]/10 transition-colors cursor-pointer">FB</div>
+               <div title="LinkedIn" className="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-400 hover:text-[#2FA084] hover:bg-[#2FA084]/10 transition-colors cursor-pointer">IN</div>
+               <div title="Twitter" className="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-400 hover:text-[#2FA084] hover:bg-[#2FA084]/10 transition-colors cursor-pointer">TW</div>
+               <div title="Facebook" className="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-400 hover:text-[#2FA084] hover:bg-[#2FA084]/10 transition-colors cursor-pointer">FB</div>
             </div>
           </div>
           <div className="border-t border-slate-100 dark:border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-slate-400 gap-4">
